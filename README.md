@@ -48,3 +48,8 @@ ReactDOM.render(<div>"HELLO REACT"</div>, document.getElementById("root"))
 ```
 
 ![hello react](https://www.snowpack.dev/img/guides/react/minimalist-hello-world-react.png)
+
+### References
+
+- [Snowpack \- The faster frontend build tool](https://www.snowpack.dev/)
+- [Getting Started with React](https://www.snowpack.dev/tutorials/react)
