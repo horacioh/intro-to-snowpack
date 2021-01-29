@@ -124,3 +124,77 @@ ReactDOM.render(
   document.getElementById("root")
 )
 ```
+
+## 3. Add Styling
+
+- copy [this svg file](https://github.com/snowpackjs/snowpack/blob/main/create-snowpack-app/app-template-react/src/logo.svg) to the `src` folder
+- Update `app.jsx`
+
+```javascript
+// import React, { useState, useEffect } from 'react';
+import logo from "./logo.svg"
+
+function App() {
+// // Create the count state.
+// const [count, setCount] = useState(0);
+// // Create the counter (+1 every second).
+//  useEffect(() => {
+//   const timer = setTimeout(() => setCount(count + 1), 1000);
+//  return () => clearTimeout(timer);
+//   }, [count, setCount]);
+//   // Return the App component.
+  return (
+//  <div className="App">
+//    <header className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+//    <p>
+//    ...
+  )
+
+```
+
+- create `app.css` and add this content:
+
+```css
+.App {
+  text-align: center;
+}
+
+.App p {
+  margin: 0.4rem;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+```
+
+- import the new `app.css` file into your `app.jsx` file
+
+![result css](https://www.snowpack.dev/img/guides/react/react.gif)
