@@ -252,3 +252,14 @@ if you want to add type-checking, you need to add the plugin `@snowpack/plugin-t
 ```bash
 yarn add @snowpack/plugin-typescript --dev
 ```
+
+## Adding Preact
+
+You can do it without any custom config needed. update `snowpack.config.js`:
+
+```json
+"alias": {
+  "react": "preact/compat",
+  "react-dom": "preact/compat"
+}
+```
