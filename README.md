@@ -242,3 +242,13 @@ plugins: ['@snowpack/plugin-react-refresh'],
 
 - [Fast Refresh · React Native](https://reactnative.dev/docs/fast-refresh)
 - [Snowpack Templates](https://github.com/snowpackjs/snowpack/tree/main/create-snowpack-app)
+
+## Adding Typescript
+
+Snowpack includes built-in support to build TypeScript files (\*.ts) to JavaScript.
+
+if you want to add type-checking, you need to add the plugin `@snowpack/plugin-typescript`
+
+```bash
+yarn add @snowpack/plugin-typescript --dev
+```
