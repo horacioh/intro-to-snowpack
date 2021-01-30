@@ -198,3 +198,47 @@ function App() {
 - import the new `app.css` file into your `app.jsx` file
 
 ![result css](https://www.snowpack.dev/img/guides/react/react.gif)
+
+## 4. Making Snowpack faster with Fast Refresh
+
+React Fast Refresh? What’s that? It’s a Snowpack enhancement that lets you push individual file changes to update the browser without refreshing the page or clearing component state.
+
+- update `index.jsx`
+
+```javascript
+// Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
+// Learn more: https://www.snowpack.dev/concepts/hot-module-replacement
+if (import.meta.hot) {
+  import.meta.hot.accept()
+}
+```
+
+- update something in the file showing the browser
+
+HMR can save you time on its own, but you may notice in the example above that the counter on the page still resets to 0. This can slow down your development, especially when you’re trying to debug a specific component state problem. Lets enable Fast Refresh to preserve component state across updates.
+
+- install `@snowpack/plugin-react-refresh`
+
+```bash
+yarn add @snowpack/plugin-react-refresh --dev
+```
+
+- add it to the plugins array in `snowpack.config.js`
+
+```
+plugins: ['@snowpack/plugin-react-refresh'],
+```
+
+- restart server and apply a change to see that the counter does not resets
+
+## Going Further
+
+- add [Prettier](https://prettier.io/)
+- add [Tests](https://www.snowpack.dev/guides/testing) (@web/test-runner is the recommended)
+- use Typescript with [this starter](https://github.com/snowpackjs/snowpack/tree/main/create-snowpack-app/app-template-react-typescript)
+- checkout all the Official [Snowpack Templates](https://github.com/snowpackjs/snowpack/tree/main/create-snowpack-app)
+
+### Reference
+
+- [Fast Refresh · React Native](https://reactnative.dev/docs/fast-refresh)
+- [Snowpack Templates](https://github.com/snowpackjs/snowpack/tree/main/create-snowpack-app)
